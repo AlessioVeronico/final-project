@@ -1,8 +1,42 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { getPage } from "../../models/Page";
+import Categories from "../Categories";
+import Pages from '../Pages';
+import { getCateg } from '../../models/Category'
 
 export default class Navbar extends React.Component {
+  constructor() {
+		super();
+
+		this.state = {
+			pages: [],
+      categories: []
+		};
+	}
+
+  componentDidMount() {
+    fetch('http://laragon.test/bedrock/web/wp-json/wp/v2/pages/').then(
+      res => res.json()
+    ).then(
+      pages => this.setState({
+        pages: pages.map( page => getPage(page) )
+      })
+    );
+
+    fetch('http://laragon.test/bedrock/web/wp-json/wp/v2/categories/').then(
+      res => res.json()
+    ).then(
+      categories => this.setState({
+        categories: categories.map( categ => getCateg(categ) )
+      })
+    );
+  }
+
   render() {
+    const page = this.state.pages.map( page => <Pages page= { page }/>
+      );
+    const categ = this.state.categories.map( categ => <Categories categ= { categ }/>
+      );
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
         <div className="container-fluid">
@@ -11,21 +45,8 @@ export default class Navbar extends React.Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link" to='/'>Home</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to='/about'>About Us</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to='/post'>Post</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to='/react'>React</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to='/wordPress'>WordPress</Link>
-              </li>
+              { page }
+              { categ }
             </ul>
           </div>
         </div>

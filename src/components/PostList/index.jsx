@@ -1,5 +1,5 @@
 import React from "react";
-import { Post } from '../../models/Post';
+import { getPost } from '../../models/Post';
 import PostCard from '../PostCard';
 
 class PostList extends React.Component {
@@ -7,22 +7,27 @@ class PostList extends React.Component {
 		super();
 
 		this.state = {
-			postList: [
-				new Post (1, 'impara a gestire', 'lorem ipsum', 'postsImg/random.jpg', 'link' ),
-				new Post (2, 'impara a gestire', 'lorem ipsum', 'postsImg/random.jpg', 'link' ),
-				new Post (3, 'impara a gestire', 'lorem ipsum', 'postsImg/random.jpg', 'link' ),
-				new Post (4, 'impara a gestire', 'lorem ipsum', 'postsImg/random.jpg', 'link' )
-			],
-		}
+			posts: []
+		};
 	}
 
+	componentDidMount() {
+    fetch('http://laragon.test/bedrock/web/wp-json/wp/v2/posts/').then(
+      res => res.json()
+    ).then(
+      posts => this.setState({
+        posts: posts.map( post => getPost(post) )
+      })
+    );
+  }
+
 	render() {
-		const posts = this.state.postList.map(post => <PostCard post= { post }/>
+		const post = this.state.posts.map(post => <PostCard post= { post }/>
 		);
 		return(
 			<div>
-				<div className="row row-cols-2 row-cols-md-4 g-4">
-					{ posts }
+				<div className="row row-cols-2 row-cols-md-2 g-4">
+					{ post }
 				</div>
 			</div>
 		)

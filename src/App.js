@@ -1,3 +1,4 @@
+import About from './components/About';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -18,6 +19,9 @@ function App() {
           <Switch>
             <Route path='/' exact>
               <Home />
+            </Route>
+            <Route path='/about' exact>
+              <About />
             </Route>
             <Route path='/post' exact>
               <PostList />

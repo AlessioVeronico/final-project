@@ -1,1 +1,6 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+.header > img {
+    max-height: 100px;
+    max-width: 100px;
+}

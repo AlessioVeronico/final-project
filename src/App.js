@@ -11,7 +11,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="container-fluid">
+    <div className="container">
     <BrowserRouter>
       <Header />
       <Navbar />

@@ -26,7 +26,7 @@ class PostList extends React.Component {
 		);
 		return(
 			<div>
-				<div className="row row-cols-2 row-cols-md-2 g-4">
+				<div className="row row-cols-2 row-cols-md-2 g-4 m-3">
 					{ post }
 				</div>
 			</div>

@@ -15,7 +15,7 @@ export default class About extends React.Component {
       res => res.json()
     ).then(
       pages => this.setState({
-        pages: pages.filter( page => page.slug == 'about-us').map( page => getPage(page) )
+        pages: pages.filter( page => page.slug === 'about-us').map( page => getPage(page) )
       })
     );
     }

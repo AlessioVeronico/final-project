@@ -33,9 +33,9 @@ export default class Navbar extends React.Component {
   }
 
   render() {
-    const page = this.state.pages.map( page => <Pages page= { page }/>
+    const page = this.state.pages.map( page => <Pages page= { page } key={ page.id }/>
       );
-    const categ = this.state.categories.filter( categ => categ.name !== 'Uncategorised' ).map( categ => <Categories categ= { categ }/>
+    const categ = this.state.categories.filter( categ => categ.name !== 'Uncategorised' ).map( categ => <Categories categ= { categ } key= { categ.id }/>
       );
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-3">

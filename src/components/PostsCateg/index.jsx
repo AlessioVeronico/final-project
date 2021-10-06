@@ -1,6 +1,6 @@
+import PostCard from '../PostCard';
 import React from "react";
 import { getPost } from '../../models/Post';
-import PostCard from '../PostCard';
 import { withRouter } from 'react-router-dom';
 
 let isLoading = false;
@@ -17,7 +17,7 @@ class PostsCateg extends React.Component {
   call = () => {
     isLoading = true;
 
-    fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/posts?categories=${this.props.match.params.id}`).then(
+    fetch( `http://laragon.test/bedrock/web/wp-json/wp/v2/posts?categories=${ this.props.match.params.id }` ).then(
       res => res.json()
     ).then(
       res => this.setState({
@@ -40,8 +40,8 @@ class PostsCateg extends React.Component {
   }
 
 	render() {
-		const post = this.state.postsCateg.map(post => <PostCard post= { post } key= { post.id } />
-		);
+		const post = this.state.postsCateg.map( post => <PostCard post= { post } key= { post.id } /> );
+    
 		return(
 			<div>
         <h2>Here you can find posts about { this.props.match.params.slug }</h2>

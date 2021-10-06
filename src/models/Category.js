@@ -7,5 +7,5 @@ export class Category {
   }
     
 export function getCateg(categ) {
-  return new Category(categ.id, categ.name, categ.slug);
+  return new Category( categ.id, categ.name, categ.slug );
 }

@@ -7,7 +7,6 @@ import Post from './components/Post';
 import PostList from './components/PostList';
 import PostsCateg from './components/PostsCateg';
 
-
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 

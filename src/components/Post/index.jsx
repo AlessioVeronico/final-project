@@ -12,7 +12,7 @@ class Post extends React.Component {
 	}
 
   componentDidMount() {
-    fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/posts/${ this.props.match.params.id }`).then(
+    fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/posts/${ this.props.match.params.id }` ).then(
       res => res.json()
     ).then(
       res => this.setState({
@@ -29,7 +29,7 @@ class Post extends React.Component {
       <div className="card h-100 text-center" key={ this.state.post.id } >
         <div className="card-body">
           <h2 className="card-title"> { this.state.post.title }  </h2>
-          <p className="card-text text-center" dangerouslySetInnerHTML={{__html: content}} />
+          <p className="card-text text-center" dangerouslySetInnerHTML={ {__html: content} } />
         </div>
       </div>
 		)

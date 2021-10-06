@@ -10,5 +10,11 @@ export class Post {
 }
   
 export function getPost(post) {
-  return new Post( post.id, post.title.rendered, post.content.rendered, post.excerpt.rendered, post.slug, post.better_featured_image.media_details.sizes.thumbnail.source_url );
+  return new Post( 
+    post.id, 
+    post.title.rendered, 
+    post.content.rendered, 
+    post.excerpt.rendered, 
+    post.slug, 
+    post.better_featured_image.media_details.sizes.thumbnail.source_url );
 }

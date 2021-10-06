@@ -8,5 +8,5 @@ export class Page {
   }
     
 export function getPage(page) {
-  return new Page(page.id, page.title.rendered, page.slug, page.content.rendered);
+  return new Page( page.id, page.title.rendered, page.slug, page.content.rendered );
 }

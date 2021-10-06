@@ -6,7 +6,7 @@ export default class About extends React.Component {
     super();
 
     this.state = {
-			pages: []
+			pages: [],
 		};
   }
 
@@ -15,17 +15,16 @@ export default class About extends React.Component {
       res => res.json()
     ).then(
       pages => this.setState({
-        pages: pages.filter( page => page.slug === 'about-us').map( page => getPage(page) )
+        pages: pages.filter( page => page.slug === 'about-us' ).map( page => getPage(page) )
       })
     );
-    }
+  }
 
   render() {
-    const page = this.state.pages.map( page => page.content
-      );
+    const page = this.state.pages.map( page => page.content );
+    
     return(
-      <div dangerouslySetInnerHTML={{__html: page}} />
-       
+      <div dangerouslySetInnerHTML={ {__html: page} } /> 
     )
   }
 }

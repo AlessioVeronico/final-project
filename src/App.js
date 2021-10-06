@@ -1,10 +1,12 @@
 import About from './components/About';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Home from './components/Home';
 import Navbar from './components/Navbar';
 import NotFound from './components/NotFound';
+import Post from './components/Post';
+import PostList from './components/PostList';
 import PostsCateg from './components/PostsCateg';
+
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
@@ -15,14 +17,13 @@ function App() {
     <BrowserRouter>
       <Header />
       <Navbar />
-      <div className='row'>
-        <div className='col-lg-12'>
+      <div className="row justify-content-center">
           <Switch>
             <Route path='/' exact>
-              <Home />
+              <PostList />
             </Route>
             <Route path='/home' exact>
-              <Home />
+              <PostList />
             </Route>
             <Route path='/about-us' exact>
               <About />
@@ -30,11 +31,13 @@ function App() {
             <Route path='/posts/:id-:slug' exact>
               <PostsCateg />
             </Route>
+            <Route path='/post/:id-:slug' exact>
+              <Post />
+            </Route>
             <Route path="*">
               <NotFound />
             </Route>
           </Switch>
-        </div>
       </div>
       <Footer />
     </BrowserRouter>

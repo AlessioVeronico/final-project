@@ -7,11 +7,11 @@ class Pages extends React.Component {
   }
 
   render() {
-    const key = `page${ this.props.page.id }`;
     const to = `/${ this.props.page.slug }`
+    
     return (
       <li className="nav-item">
-        <Link className="nav-link" key={ key } to={ to }> { this.props.page.title }</Link>
+        <Link className="nav-link" to={ to }>{ this.props.page.title }</Link>
       </li>
     );
   }

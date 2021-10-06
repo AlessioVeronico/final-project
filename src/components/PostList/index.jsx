@@ -12,7 +12,7 @@ class PostList extends React.Component {
 	}
 
 	componentDidMount() {
-    fetch('http://laragon.test/bedrock/web/wp-json/wp/v2/posts/').then(
+    fetch('http://laragon.test/bedrock/web/wp-json/wp/v2/posts').then(
       res => res.json()
     ).then(
       posts => this.setState({

@@ -7,17 +7,19 @@ class Post extends React.Component {
   }
 
   render() {
-		const content = this.props.post.content;
+		const content = this.props.post.excerpt;
+    const card = `/post/${ this.props.post.id }-${ this.props.post.slug }`;
 
     return (
-      <div className="col">
-        <div className="card h-100 w-75" key={ this.props.post.id }>
+      <div className="col justify-content-center ">
+        <div className="card h-100 text-center justify-content-center d-flex">
+          <img src={ this.props.post.img } className="card-img-top img" alt={ this.props.post.slug }/>
           <div className="card-body">
             <h2 className="card-title"> { this.props.post.title } </h2>
-            <p className="card-text" dangerouslySetInnerHTML={{__html: content}} />
+            <p className="card-text" dangerouslySetInnerHTML={ {__html: content} } />
           </div>
           <div className="card-footer">
-            <Link> { this.props.post.link } </Link>
+            <Link className="btn btn-dark" to={ card }> Read more... </Link>
           </div>
         </div>
       </div> 

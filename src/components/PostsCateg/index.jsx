@@ -35,16 +35,17 @@ class PostsCateg extends React.Component {
       isLoading = false;
       return;
     }
-    
+
     this.call();
   }
 
 	render() {
-		const post = this.state.postsCateg.map(post => <PostCard post= { post }/>
+		const post = this.state.postsCateg.map(post => <PostCard post= { post } key= { post.id } />
 		);
 		return(
 			<div>
-				<div className="row row-cols-2 row-cols-md-2 g-4">
+        <h2>Here you can find posts about { this.props.match.params.slug }</h2>
+				<div className="row row-cols-2 row-cols-md-2 g-4 p-2">
 					{ post }
 				</div>
 			</div>

@@ -7,9 +7,12 @@ class Categories extends React.Component {
   }
 
   render() {
+    const categPost = `/posts/${ this.props.categ.id }`;
+    const key= `categ${ this.props.categ.id }`;
+    
     return (
       <li className="nav-item">
-        <Link className="nav-link" key={ this.props.categ.id } to='/home'>{ this.props.categ.name }</Link>
+        <Link className="nav-link" key={ key } to={ categPost }>{ this.props.categ.name }</Link>
       </li>
     );
   }

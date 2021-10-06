@@ -27,7 +27,7 @@ function App() {
             <Route path='/about-us' exact>
               <About />
             </Route>
-            <Route path='/posts/:id' exact>
+            <Route path='/posts/:id-:slug' exact>
               <PostsCateg />
             </Route>
             <Route path="*">

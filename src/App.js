@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import NotFound from './components/NotFound';
+import PostsCateg from './components/PostsCateg';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
@@ -26,7 +27,9 @@ function App() {
             <Route path='/about-us' exact>
               <About />
             </Route>
-            
+            <Route path='/posts/:id' exact>
+              <PostsCateg />
+            </Route>
             <Route path="*">
               <NotFound />
             </Route>

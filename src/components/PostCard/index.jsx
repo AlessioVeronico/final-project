@@ -7,13 +7,14 @@ class Post extends React.Component {
   }
 
   render() {
-		
+		const content = this.props.post.content;
+
     return (
       <div className="col">
         <div className="card h-100 w-75" key={ this.props.post.id }>
           <div className="card-body">
             <h2 className="card-title"> { this.props.post.title } </h2>
-            <p className="card-text"> { this.props.post.content } </p>
+            <p className="card-text" dangerouslySetInnerHTML={{__html: content}} />
           </div>
           <div className="card-footer">
             <Link> { this.props.post.link } </Link>

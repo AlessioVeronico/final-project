@@ -9,7 +9,7 @@ class Pages extends React.Component {
   render() {
     return (
       <li className="nav-item">
-        <Link className="nav-link" key={ this.props.page.id } to='/about'>{ this.props.page.title }</Link>
+        <Link className="nav-link" key={ this.props.page.id } to={ this.props.page.slug }> { this.props.page.title }</Link>
       </li>
     );
   }

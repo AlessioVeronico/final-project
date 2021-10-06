@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import NotFound from './components/NotFound';
-import PostList from './components/PostList';
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -20,12 +20,13 @@ function App() {
             <Route path='/' exact>
               <Home />
             </Route>
-            <Route path='/about' exact>
+            <Route path='/home' exact>
+              <Home />
+            </Route>
+            <Route path='/about-us' exact>
               <About />
             </Route>
-            <Route path='/post' exact>
-              <PostList />
-            </Route>
+            
             <Route path="*">
               <NotFound />
             </Route>

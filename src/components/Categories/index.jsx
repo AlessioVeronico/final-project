@@ -9,7 +9,7 @@ class Categories extends React.Component {
   render() {
     return (
       <li className="nav-item">
-        <Link className="nav-link" key={ this.props.categ.id } to='/about'>{ this.props.categ.name }</Link>
+        <Link className="nav-link" key={ this.props.categ.id } to='/home'>{ this.props.categ.name }</Link>
       </li>
     );
   }

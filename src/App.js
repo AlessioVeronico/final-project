@@ -21,16 +21,16 @@ function App() {
             <Route path='/' exact>
               <PostList />
             </Route>
-            <Route path='/page/:id-home' exact>
+            <Route path='/page-home' exact>
               <PostList />
             </Route>
-            <Route path='/page/:id-about-us' exact>
+            <Route path='/page-:slug'>
               <SinglePage />
             </Route>
-            <Route path='/posts/:id-:slug' exact>
+            <Route path='/posts/:id-:slug'>
               <PostsCateg />
             </Route>
-            <Route path='/post/:id-:slug' exact>
+            <Route path='/post/:slug'>
               <Post />
             </Route>
             <Route path="*">

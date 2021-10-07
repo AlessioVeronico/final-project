@@ -1,4 +1,5 @@
 import React from "react";
+import URL from '../../Constants';
 import { withRouter } from "react-router";
 import { getPost } from '../../models/Post';
 
@@ -12,7 +13,7 @@ class Post extends React.Component {
 	};
 
   componentDidMount() {
-    fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/posts?slug=${ this.props.match.params.slug }` ).then(
+    fetch(`${ URL }/posts?slug=${ this.props.match.params.slug }` ).then(
       res => res.json()
     ).then(
       res => {

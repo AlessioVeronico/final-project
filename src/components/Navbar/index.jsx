@@ -1,6 +1,7 @@
 import Categories from "../CategoriesList";
 import Pages from '../PagesList';
 import React from "react";
+import URL from '../../Constants';
 import { getPage } from "../../models/Page";
 import { getCateg } from '../../models/Category';
 
@@ -15,7 +16,7 @@ export default class Navbar extends React.Component {
 	};
 
   componentDidMount() {
-    fetch('http://laragon.test/bedrock/web/wp-json/wp/v2/pages/').then(
+    fetch(`${ URL }/pages`).then(
       res => res.json()
     ).then(
       pages => this.setState({
@@ -23,7 +24,7 @@ export default class Navbar extends React.Component {
       })
     );
 
-    fetch('http://laragon.test/bedrock/web/wp-json/wp/v2/categories/').then(
+    fetch(`${ URL }/categories`).then(
       res => res.json()
     ).then(
       categories => this.setState({

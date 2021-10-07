@@ -1,6 +1,7 @@
-import React from "react";
-import { getPost } from '../../models/Post';
 import PostCard from '../PostCard';
+import React from "react";
+import URL from '../../Constants';
+import { getPost } from '../../models/Post';
 
 class PostList extends React.Component {
 	constructor() {
@@ -12,7 +13,7 @@ class PostList extends React.Component {
 	};
 
 	componentDidMount() {
-    fetch('http://laragon.test/bedrock/web/wp-json/wp/v2/posts').then(
+    fetch(`${ URL }/posts`).then(
       res => res.json()
     ).then(
       posts => this.setState({

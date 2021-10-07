@@ -1,5 +1,6 @@
 import PostCard from '../PostCard';
 import React from "react";
+import URL from '../../Constants';
 import { getPost } from '../../models/Post';
 import { withRouter } from 'react-router-dom';
 
@@ -17,7 +18,7 @@ class PostsCateg extends React.Component {
   call = () => {
     isLoading = true;
 
-    fetch( `http://laragon.test/bedrock/web/wp-json/wp/v2/posts?categories=${ this.props.match.params.id }` ).then(
+    fetch( `${ URL }/posts?categories=${ this.props.match.params.id }` ).then(
       res => res.json()
     ).then(
       res => {

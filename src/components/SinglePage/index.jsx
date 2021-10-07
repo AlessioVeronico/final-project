@@ -1,4 +1,5 @@
 import React from "react";
+import URL from '../../Constants';
 import { withRouter } from "react-router";
 import { getPage } from "../../models/Page";
 
@@ -12,7 +13,7 @@ class SinglePage extends React.Component {
   };
 
   componentDidMount = () => {
-    fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/pages?slug=${ this.props.match.params.slug }`).then(
+    fetch(`${ URL }/pages?slug=${ this.props.match.params.slug }`).then(
       res => res.json()
     ).then(
       page => {

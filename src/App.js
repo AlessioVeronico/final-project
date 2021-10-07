@@ -13,7 +13,7 @@ import 'bootstrap/dist/js/bootstrap';
 
 function App() {
   return (
-    <div className="container">
+    <div className="container justify-content-center">
     <BrowserRouter>
       <Header />
       <Navbar />

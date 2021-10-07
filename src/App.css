@@ -12,3 +12,11 @@
     width: 20%;
     padding-top: 1rem;
 }
+
+.imgBig {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    padding-top: 1rem;
+}

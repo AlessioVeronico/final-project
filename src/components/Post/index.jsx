@@ -34,10 +34,13 @@ class Post extends React.Component {
     const content = this.state.post.content;
 
 		return(
-      <div className="card h-100 text-center" key={ this.state.post.id } >
-        <div className="card-body">
-          <h2 className="card-title"> { this.state.post.title }  </h2>
-          <p className="card-text text-center" dangerouslySetInnerHTML={ {__html: content} } />
+      <div>
+        <div className="card h-100 text-center" key={ this.state.post.id } >
+          <img src={ this.state.post.img } className="card-img-top imgBig" alt={ this.state.post.slug }/>
+          <div className="card-body">
+            <h2 className="card-title"> { this.state.post.title }  </h2>
+            <p className="card-text text-center" dangerouslySetInnerHTML={ {__html: content} } />
+          </div>
         </div>
       </div>
 		);

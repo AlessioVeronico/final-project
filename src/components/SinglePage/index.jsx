@@ -7,22 +7,29 @@ class SinglePage extends React.Component {
     super();
 
     this.state = {
-			pages: [],
+			page: '',
 		};
   }
 
-  componentDidMount() {
-    fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/pages/${ this.props.match.params.id }`).then(
+  componentDidMount = () => {
+    fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/pages?slug=${ this.props.match.params.slug }`).then(
       res => res.json()
     ).then(
-      pages => this.setState({
-        pages: getPage(pages) 
-      })
+      page => {
+        if ( !page.length ) {
+          this.props.history.push('/not-found');
+          return;
+        }
+
+        this.setState({
+          page: getPage(page[0]) 
+        });
+      }
     );
   }
 
   render() {
-    const page = this.state.pages.content;
+    const page = this.state.page.content;
     
     return(
       <div dangerouslySetInnerHTML={ {__html: page} } /> 

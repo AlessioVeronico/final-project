@@ -10,9 +10,9 @@ class PostsCateg extends React.Component {
 		super();
 
 		this.state = {
-			postsCateg: [],
+			postsCateg: []
 		};
-	}
+	};
 
   call = () => {
     isLoading = true;
@@ -20,11 +20,18 @@ class PostsCateg extends React.Component {
     fetch( `http://laragon.test/bedrock/web/wp-json/wp/v2/posts?categories=${ this.props.match.params.id }` ).then(
       res => res.json()
     ).then(
-      res => this.setState({
-        postsCateg: res.map( post => getPost(post) )
-      })
+      res => {
+        if ( !res.length ) {
+          this.props.history.push('/not-found');
+          return;
+        }
+        
+        this.setState({
+          postsCateg: res.map( post => getPost(post) )
+        });
+      }  
 	  );
-  }
+  };
 
 	componentDidMount() {
     this.call();
@@ -34,10 +41,10 @@ class PostsCateg extends React.Component {
     if(isLoading) {
       isLoading = false;
       return;
-    }
+    };
 
     this.call();
-  }
+  };
 
 	render() {
 		const post = this.state.postsCateg.map( post => <PostCard post= { post } key= { post.id } /> );
@@ -49,8 +56,8 @@ class PostsCateg extends React.Component {
 					{ post }
 				</div>
 			</div>
-		)
-	}
-}
+		);
+	};
+};
 
 export default withRouter(PostsCateg);

@@ -12,13 +12,20 @@ class Post extends React.Component {
 	}
 
   componentDidMount() {
-    fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/posts/${ this.props.match.params.id }` ).then(
+    fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/posts?slug=${ this.props.match.params.slug }` ).then(
       res => res.json()
     ).then(
-      res => this.setState({
-        post: getPost(res)
-      }) 
-    );
+      res => {
+        if ( !res.length ) {
+          this.props.history.push('/not-found');
+          return;
+        }
+          
+        this.setState({
+          post: getPost(res[0]) 
+        });
+      }
+    );    
   }
   
   

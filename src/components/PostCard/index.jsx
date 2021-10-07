@@ -8,7 +8,7 @@ class Post extends React.Component {
 
   render() {
 		const content = this.props.post.excerpt;
-    const card = `/post/${ this.props.post.id }-${ this.props.post.slug }`;
+    const card = `/post/${ this.props.post.slug }`;
 
     return (
       <div className="col justify-content-center ">

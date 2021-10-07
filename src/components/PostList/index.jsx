@@ -1,32 +1,38 @@
-import React from "react";
-import { Post } from '../../models/Post';
 import PostCard from '../PostCard';
+import React from "react";
+import URL from '../../Constants';
+import { getPost } from '../../models/Post';
 
 class PostList extends React.Component {
 	constructor() {
 		super();
 
 		this.state = {
-			postList: [
-				new Post (1, 'impara a gestire', 'lorem ipsum', 'postsImg/random.jpg', 'link' ),
-				new Post (2, 'impara a gestire', 'lorem ipsum', 'postsImg/random.jpg', 'link' ),
-				new Post (3, 'impara a gestire', 'lorem ipsum', 'postsImg/random.jpg', 'link' ),
-				new Post (4, 'impara a gestire', 'lorem ipsum', 'postsImg/random.jpg', 'link' )
-			],
-		}
-	}
+			posts: []
+		};
+	};
+
+	componentDidMount() {
+    fetch(`${ URL }/posts`).then(
+      res => res.json()
+    ).then(
+      posts => this.setState({
+        posts: posts.map( post => getPost(post) )
+      })
+    );
+  };
 
 	render() {
-		const posts = this.state.postList.map(post => <PostCard post= { post }/>
-		);
+		const post = this.state.posts.map( post => <PostCard post= { post } key={ post.id }/> );
+    
 		return(
 			<div>
-				<div className="row row-cols-2 row-cols-md-4 g-4">
-					{ posts }
+				<div className="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center" >
+					{ post }
 				</div>
 			</div>
-		)
-	}
-}
+		);
+	};
+};
 
 export default PostList;

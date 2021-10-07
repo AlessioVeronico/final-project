@@ -32,7 +32,7 @@ class SinglePage extends React.Component {
   render() {
     const page = this.state.page.content;
     
-    return(
+    return (
       <div dangerouslySetInnerHTML={ {__html: page} } /> 
     );
   }

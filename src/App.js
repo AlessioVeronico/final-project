@@ -14,34 +14,34 @@ import 'bootstrap/dist/js/bootstrap';
 function App() {
   return (
     <div className="container justify-content-center">
-    <BrowserRouter>
-      <Header />
-      <Navbar />
-      <div className="row justify-content-center">
-          <Switch>
-            <Route path='/' exact>
-              <PostList />
-            </Route>
-            <Route path='/page-home' exact>
-              <PostList />
-            </Route>
-            <Route path='/page-:slug'>
-              <SinglePage />
-            </Route>
-            <Route path='/posts/:id-:slug'>
-              <PostsCateg />
-            </Route>
-            <Route path='/post/:slug'>
-              <Post />
-            </Route>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
-      </div>
-      <Footer />
-    </BrowserRouter>
-  </div>
+      <BrowserRouter>
+        <Header />
+        <Navbar />
+        <div className="row justify-content-center">
+            <Switch>
+              <Route path='/' exact>
+                <PostList />
+              </Route>
+              <Route path='/page-home' exact>
+                <PostList />
+              </Route>
+              <Route path='/page-:slug'>
+                <SinglePage />
+              </Route>
+              <Route path='/posts/:id-:slug'>
+                <PostsCateg />
+              </Route>
+              <Route path='/post/:slug'>
+                <Post />
+              </Route>
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
+        </div>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
 

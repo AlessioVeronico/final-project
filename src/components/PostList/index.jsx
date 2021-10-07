@@ -9,7 +9,7 @@ class PostList extends React.Component {
 		this.state = {
 			posts: []
 		};
-	}
+	};
 
 	componentDidMount() {
     fetch('http://laragon.test/bedrock/web/wp-json/wp/v2/posts').then(
@@ -19,7 +19,7 @@ class PostList extends React.Component {
         posts: posts.map( post => getPost(post) )
       })
     );
-  }
+  };
 
 	render() {
 		const post = this.state.posts.map( post => <PostCard post= { post } key={ post.id }/> );
@@ -30,8 +30,8 @@ class PostList extends React.Component {
 					{ post }
 				</div>
 			</div>
-		)
-	}
-}
+		);
+	};
+};
 
 export default PostList;

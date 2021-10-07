@@ -9,7 +9,7 @@ class Post extends React.Component {
 		this.state = {
 			post: '',
 		};
-	}
+	};
 
   componentDidMount() {
     fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/posts?slug=${ this.props.match.params.slug }` ).then(
@@ -19,14 +19,14 @@ class Post extends React.Component {
         if ( !res.length ) {
           this.props.history.push('/not-found');
           return;
-        }
+        };
           
         this.setState({
           post: getPost(res[0]) 
         });
       }
     );    
-  }
+  };
   
   
 	render() {
@@ -39,8 +39,8 @@ class Post extends React.Component {
           <p className="card-text text-center" dangerouslySetInnerHTML={ {__html: content} } />
         </div>
       </div>
-		)
-	}
-}
+		);
+	};
+};
 
 export default withRouter(Post);

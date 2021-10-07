@@ -24,7 +24,7 @@ class PostsCateg extends React.Component {
         if ( !res.length ) {
           this.props.history.push('/not-found');
           return;
-        }
+        };
         
         this.setState({
           postsCateg: res.map( post => getPost(post) )
@@ -52,7 +52,7 @@ class PostsCateg extends React.Component {
 		return(
 			<div>
         <h2>Here you can find posts about { this.props.match.params.slug }</h2>
-				<div className="row row-cols-2 row-cols-md-2 g-4 p-2">
+				<div className="row row-cols-1 row-cols-md-2 g-4 p-2">
 					{ post }
 				</div>
 			</div>

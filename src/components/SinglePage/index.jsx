@@ -9,7 +9,7 @@ class SinglePage extends React.Component {
     this.state = {
 			page: '',
 		};
-  }
+  };
 
   componentDidMount = () => {
     fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/pages?slug=${ this.props.match.params.slug }`).then(
@@ -19,22 +19,22 @@ class SinglePage extends React.Component {
         if ( !page.length ) {
           this.props.history.push('/not-found');
           return;
-        }
+        };
 
         this.setState({
           page: getPage(page[0]) 
         });
       }
     );
-  }
+  };
 
   render() {
     const page = this.state.page.content;
     
     return(
       <div dangerouslySetInnerHTML={ {__html: page} } /> 
-    )
-  }
-}
+    );
+  };
+};
 
-export default withRouter(SinglePage)
+export default withRouter(SinglePage);

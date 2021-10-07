@@ -9,6 +9,7 @@ import SinglePage from './components/SinglePage';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/js/bootstrap';
 
 function App() {
   return (
@@ -42,6 +43,6 @@ function App() {
     </BrowserRouter>
   </div>
   );
-}
+};
 
 export default App;

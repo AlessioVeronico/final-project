@@ -1,6 +1,6 @@
 import React from "react";
-import react from '../../images/react.png'
-import wp from '../../images/wp.png'
+import react from '../../images/react.png';
+import wp from '../../images/wp.png';
 
 export default class Header extends React.Component {
   render() {
@@ -9,6 +9,6 @@ export default class Header extends React.Component {
         <img src={ react } alt="react" />
         <img src={ wp } alt="react" />
       </div>
-    )
-  }
-}
+    );
+  };
+};

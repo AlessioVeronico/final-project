@@ -2,7 +2,7 @@ import Categories from "../CategoriesList";
 import Pages from '../PagesList';
 import React from "react";
 import { getPage } from "../../models/Page";
-import { getCateg } from '../../models/Category'
+import { getCateg } from '../../models/Category';
 
 export default class Navbar extends React.Component {
   constructor() {
@@ -12,7 +12,7 @@ export default class Navbar extends React.Component {
 			pages: [],
       categories: []
 		};
-	}
+	};
 
   componentDidMount() {
     fetch('http://laragon.test/bedrock/web/wp-json/wp/v2/pages/').then(
@@ -30,24 +30,23 @@ export default class Navbar extends React.Component {
         categories: categories.map( categ => getCateg(categ) )
       })
     );
-  }
+  };
 
   render() {
     const page = this.state.pages.map( page => <Pages page= { page } key={ page.id }/> );
-    const categ = this.state.categories.filter( 
-      categ => categ.name !== 'Uncategorised' 
+    const categ = this.state.categories.filter( categ => categ.name !== 'Uncategorised' 
     ).map( categ => <Categories categ= { categ } key= { categ.id }/> );
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
         <div className="container-fluid">
           <button className="navbar-toggler" 
-              type="button" 
-              data-bs-toggle="collapse" 
-              data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" 
-              aria-expanded="false" 
-              aria-label="Toggle navigation">
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
@@ -59,5 +58,5 @@ export default class Navbar extends React.Component {
         </div>
       </nav>
     );
-  }
-}
+  };
+};

@@ -8,6 +8,6 @@ export default class Footer extends React.Component {
         <p>Property of Alessio Veronico </p> 
         <p>averonico.dev@gmail.com </p> 
       </div>
-    )
-  }
-}
+    );
+  };
+};

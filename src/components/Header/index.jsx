@@ -4,7 +4,7 @@ import wp from '../../images/wp.png';
 
 export default class Header extends React.Component {
   render() {
-    return(
+    return (
       <div className='text-center header p-2'>
         <img src={ react } alt="react" />
         <img src={ wp } alt="react" />

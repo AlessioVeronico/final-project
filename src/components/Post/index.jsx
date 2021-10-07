@@ -33,7 +33,7 @@ class Post extends React.Component {
 	render() {
     const content = this.state.post.content;
 
-		return(
+		return (
       <div>
         <div className="card h-100 text-center" key={ this.state.post.id } >
           <img src={ this.state.post.img } className="card-img-top imgBig" alt={ this.state.post.slug }/>

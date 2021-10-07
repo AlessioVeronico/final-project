@@ -3,9 +3,9 @@ export class Category {
       this.id = id;
       this.name = name;
       this.slug = slug;
-    };
-  };
+    }
+  }
     
 export function getCateg(categ) {
   return new Category( categ.id, categ.name, categ.slug );
-};
+}

@@ -10,5 +10,5 @@ export default class Header extends React.Component {
         <img src={ wp } alt="react" />
       </div>
     );
-  };
-};
+  }
+}

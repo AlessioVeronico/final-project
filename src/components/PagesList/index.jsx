@@ -10,7 +10,7 @@ class Pages extends React.Component {
         <Link className="nav-link" to={ to }>{ this.props.page.title }</Link>
       </li>
     );
-  };
-};
+  }
+}
 
 export default Pages;

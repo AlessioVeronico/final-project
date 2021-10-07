@@ -9,8 +9,8 @@ class SinglePage extends React.Component {
 
     this.state = {
 			page: '',
-		};
-  };
+		}
+  }
 
   componentDidMount = () => {
     fetch(`${ URL }/pages?slug=${ this.props.match.params.slug }`).then(
@@ -27,7 +27,7 @@ class SinglePage extends React.Component {
         });
       }
     );
-  };
+  }
 
   render() {
     const page = this.state.page.content;
@@ -35,7 +35,7 @@ class SinglePage extends React.Component {
     return(
       <div dangerouslySetInnerHTML={ {__html: page} } /> 
     );
-  };
-};
+  }
+}
 
 export default withRouter(SinglePage);

@@ -12,8 +12,8 @@ export default class Navbar extends React.Component {
 		this.state = {
 			pages: [],
       categories: []
-		};
-	};
+		}
+	}
 
   componentDidMount() {
     fetch(`${ URL }/pages`).then(
@@ -31,7 +31,7 @@ export default class Navbar extends React.Component {
         categories: categories.map( categ => getCateg(categ) )
       })
     );
-  };
+  }
 
   render() {
     const page = this.state.pages.map( page => <Pages page= { page } key={ page.id }/> );
@@ -59,5 +59,5 @@ export default class Navbar extends React.Component {
         </div>
       </nav>
     );
-  };
-};
+  }
+}

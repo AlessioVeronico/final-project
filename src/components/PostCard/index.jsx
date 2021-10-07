@@ -2,10 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class Post extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
 		const content = this.props.post.excerpt;
     const card = `/post/${ this.props.post.slug }`;

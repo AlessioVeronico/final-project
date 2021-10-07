@@ -12,8 +12,8 @@ class PostsCateg extends React.Component {
 
 		this.state = {
 			postsCateg: []
-		};
-	};
+		}
+	}
 
   call = () => {
     isLoading = true;
@@ -32,11 +32,11 @@ class PostsCateg extends React.Component {
         });
       }  
 	  );
-  };
+  }
 
 	componentDidMount() {
     this.call();
-  };
+  }
 
   componentDidUpdate() {
     if(isLoading) {
@@ -45,7 +45,7 @@ class PostsCateg extends React.Component {
     };
 
     this.call();
-  };
+  }
 
 	render() {
 		const post = this.state.postsCateg.map( post => <PostCard post= { post } key= { post.id } /> );
@@ -58,7 +58,7 @@ class PostsCateg extends React.Component {
 				</div>
 			</div>
 		);
-	};
-};
+	}
+}
 
 export default withRouter(PostsCateg);

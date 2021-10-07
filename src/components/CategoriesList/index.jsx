@@ -14,7 +14,7 @@ class Categories extends React.Component {
         <Link className="nav-link"  to={ categPost }>{ this.props.categ.name }</Link>
       </li>
     );
-  };
-};
+  }
+}
 
 export default Categories;

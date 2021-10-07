@@ -6,8 +6,8 @@ export class Post {
     this.img = img
     this.slug = slug;
     this.title = title;
-  };
-};
+  }
+}
   
 export function getPost(post) {
   return new Post( 
@@ -17,4 +17,4 @@ export function getPost(post) {
     post.excerpt.rendered, 
     post.slug, 
     post.better_featured_image.media_details.sizes.thumbnail.source_url );
-};
+}

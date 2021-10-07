@@ -9,8 +9,8 @@ class Post extends React.Component {
 
 		this.state = {
 			post: '',
-		};
-	};
+		}
+	}
 
   componentDidMount() {
     fetch(`${ URL }/posts?slug=${ this.props.match.params.slug }` ).then(
@@ -27,7 +27,7 @@ class Post extends React.Component {
         });
       }
     );    
-  };
+  }
   
   
 	render() {
@@ -44,7 +44,7 @@ class Post extends React.Component {
         </div>
       </div>
 		);
-	};
-};
+	}
+}
 
 export default withRouter(Post);

@@ -9,8 +9,8 @@ class PostList extends React.Component {
 
 		this.state = {
 			posts: []
-		};
-	};
+		}
+	}
 
 	componentDidMount() {
     fetch(`${ URL }/posts`).then(
@@ -20,7 +20,7 @@ class PostList extends React.Component {
         posts: posts.map( post => getPost(post) )
       })
     );
-  };
+  }
 
 	render() {
 		const post = this.state.posts.map( post => <PostCard post= { post } key={ post.id }/> );
@@ -32,7 +32,7 @@ class PostList extends React.Component {
 				</div>
 			</div>
 		);
-	};
-};
+	}
+}
 
 export default PostList;

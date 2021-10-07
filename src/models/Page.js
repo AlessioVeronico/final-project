@@ -4,9 +4,9 @@ export class Page {
     this.id = id;
     this.slug = slug;
     this.title = title;
-  };
-};
+  }
+}
     
 export function getPage(page) {
   return new Page( page.id, page.title.rendered, page.slug, page.content.rendered );
-};
+}

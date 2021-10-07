@@ -9,5 +9,5 @@ export default class Footer extends React.Component {
         <p>averonico.dev@gmail.com </p> 
       </div>
     );
-  };
-};
+  }
+}

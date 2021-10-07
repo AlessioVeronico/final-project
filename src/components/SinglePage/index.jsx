@@ -1,7 +1,8 @@
 import React from "react";
+import { withRouter } from "react-router";
 import { getPage } from "../../models/Page";
 
-export default class About extends React.Component {
+class SinglePage extends React.Component {
   constructor() {
     super();
 
@@ -11,20 +12,22 @@ export default class About extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://laragon.test/bedrock/web/wp-json/wp/v2/pages/').then(
+    fetch(`http://laragon.test/bedrock/web/wp-json/wp/v2/pages/${ this.props.match.params.id }`).then(
       res => res.json()
     ).then(
       pages => this.setState({
-        pages: pages.filter( page => page.slug === 'about-us' ).map( page => getPage(page) )
+        pages: getPage(pages) 
       })
     );
   }
 
   render() {
-    const page = this.state.pages.map( page => page.content );
+    const page = this.state.pages.content;
     
     return(
       <div dangerouslySetInnerHTML={ {__html: page} } /> 
     )
   }
 }
+
+export default withRouter(SinglePage)

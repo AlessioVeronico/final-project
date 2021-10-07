@@ -7,7 +7,7 @@ class Pages extends React.Component {
   }
 
   render() {
-    const to = `/${ this.props.page.slug }`
+    const to = `/${ this.props.page.id }-${ this.props.page.slug }`
     
     return (
       <li className="nav-item">

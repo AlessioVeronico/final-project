@@ -1,4 +1,3 @@
-import About from './components/About';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
@@ -6,6 +5,7 @@ import NotFound from './components/NotFound';
 import Post from './components/Post';
 import PostList from './components/PostList';
 import PostsCateg from './components/PostsCateg';
+import SinglePage from './components/SinglePage';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
@@ -21,11 +21,11 @@ function App() {
             <Route path='/' exact>
               <PostList />
             </Route>
-            <Route path='/home' exact>
+            <Route path='/:id-home' exact>
               <PostList />
             </Route>
-            <Route path='/about-us' exact>
-              <About />
+            <Route path='/:id-:slug' exact>
+              <SinglePage />
             </Route>
             <Route path='/posts/:id-:slug' exact>
               <PostsCateg />

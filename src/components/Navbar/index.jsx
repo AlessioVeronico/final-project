@@ -1,5 +1,5 @@
-import Categories from "../Categories";
-import Pages from '../Pages';
+import Categories from "../CategoriesList";
+import Pages from '../PagesList';
 import React from "react";
 import { getPage } from "../../models/Page";
 import { getCateg } from '../../models/Category'

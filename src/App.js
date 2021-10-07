@@ -21,10 +21,10 @@ function App() {
             <Route path='/' exact>
               <PostList />
             </Route>
-            <Route path='/:id-home' exact>
+            <Route path='/page/:id-home' exact>
               <PostList />
             </Route>
-            <Route path='/:id-:slug' exact>
+            <Route path='/page/:id-about-us' exact>
               <SinglePage />
             </Route>
             <Route path='/posts/:id-:slug' exact>
